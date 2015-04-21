@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
   s.authors = ["Bogdan Gusiev"]
-  s.date = "2015-04-13"
+  s.date = "2015-04-21"
   s.description = "This allows you to easily build datagrid aka data tables with sortable columns and filters"
   s.email = "agresso@gmail.com"
   s.extra_rdoc_files = [
@@ -113,6 +113,9 @@ Gem::Specification.new do |s|
     "spec/support/test_partials/client/datagrid/_order_for.html.erb",
     "spec/support/test_partials/client/datagrid/_row.html.erb",
     "spec/support/test_partials/client/datagrid/_table.html.erb",
+    "spec/support/test_partials/custom_checkboxes/_enum_checkboxes.html.erb",
+    "spec/support/test_partials/custom_form/_form.html.erb",
+    "spec/support/test_partials/custom_range/_range_filter.html.erb",
     "templates/controller.rb.erb",
     "templates/grid.rb.erb",
     "templates/index.html.erb"
@@ -126,7 +129,6 @@ Gem::Specification.new do |s|
     s.specification_version = 4
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<rails>, [">= 3.2.18"])
       s.add_development_dependency(%q<bundler>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
       s.add_development_dependency(%q<debugger>, [">= 0"])
@@ -139,7 +141,6 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<bson>, ["= 1.4.0"])
       s.add_development_dependency(%q<bson_ext>, ["= 1.4.0"])
     else
-      s.add_dependency(%q<rails>, [">= 3.2.18"])
       s.add_dependency(%q<bundler>, [">= 0"])
       s.add_dependency(%q<jeweler>, [">= 0"])
       s.add_dependency(%q<debugger>, [">= 0"])
@@ -153,7 +154,6 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<bson_ext>, ["= 1.4.0"])
     end
   else
-    s.add_dependency(%q<rails>, [">= 3.2.18"])
     s.add_dependency(%q<bundler>, [">= 0"])
     s.add_dependency(%q<jeweler>, [">= 0"])
     s.add_dependency(%q<debugger>, [">= 0"])

@@ -1,7 +1,5 @@
 source "https://rubygems.org"
 
-gem "rails", ">= 3.2.18"
-
 group :development do
 
   gem "bundler"

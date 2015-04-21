@@ -1,4 +1,3 @@
-require "action_view"
 require "datagrid/configuration"
 
 module Datagrid
@@ -13,12 +12,6 @@ module Datagrid
   autoload :Ordering
   autoload :Configuration
 
-  autoload :Helper
-  ActionView::Base.send(:include, Datagrid::Helper)
-  
-  autoload :FormBuilder
-  ActionView::Helpers::FormBuilder.send(:include, Datagrid::FormBuilder)
-  
   autoload :Renderer
 
   autoload :Engine
@@ -42,7 +35,15 @@ module Datagrid
 
 end
 
-require "datagrid/scaffold"
-I18n.load_path << File.expand_path('../datagrid/locale/en.yml', __FILE__)
+if defined?(Rails)
+  require "datagrid/scaffold"
+  I18n.load_path << File.expand_path('../datagrid/locale/en.yml', __FILE__)
+end
 
+if defined?(ActionView)
+  require "datagrid/helper"
+  ActionView::Base.send(:include, Datagrid::Helper)
 
+  require "datagrid/form_builder"
+  ActionView::Helpers::FormBuilder.send(:include, Datagrid::FormBuilder)
+end
